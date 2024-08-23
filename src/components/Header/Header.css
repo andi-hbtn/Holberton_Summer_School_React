@@ -1,0 +1,16 @@
+.custom_header {
+	background-image: url("../../images/page-heading-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	border-radius: 0px 0px 150px 150px;
+	padding: 200px 0px 100px 0px;
+}
+
+.header-info>h4 {
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+	font-size: 60px;
+	font-weight: bold;
+}

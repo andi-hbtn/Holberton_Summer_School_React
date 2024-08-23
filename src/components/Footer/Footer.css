@@ -1,0 +1,15 @@
+.custom_footer {
+	margin-top: 50px;
+	background-image: url("../../images/page-heading-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	border-radius: 150px 150px 0px 0px;
+	padding: 50px 0px 100px 0px;
+}
+
+.custom_footer>div>p {
+	text-align: center;
+	color: #ffffff;
+	font-size: 20px;
+}
