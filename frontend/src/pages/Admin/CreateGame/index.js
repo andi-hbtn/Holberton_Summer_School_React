@@ -3,33 +3,37 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useGameContext } from '../../../context/Game';
 import "./index.css";
 
-const Game = () => {
+const CreateGame = () => {
 	const { create_game } = useGameContext();
 
 	const [game, setGame] = useState({ title: "", category: "", price: 0, discount: 0, description: "", image: [] });
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const formData = new FormData();
-		formData.append('title', game.title);
-		formData.append('category', game.category);
-		formData.append('price', game.price);
-
-		formData.append('discount', game.discount);
-		formData.append('description', game.description);
-		formData.append('title', game.title);
-		formData.append('image', game.image);
-
-		await create_game(formData);
+		// const formData = new FormData();
+		// formData.append('title', game.title);
+		// formData.append('category', game.category);
+		// formData.append('price', game.price);
+		// formData.append('discount', game.discount);
+		// formData.append('description', game.description);
+		// formData.append('title', game.title);
+		// formData.append('image', game.image);
+		// await create_game(formData);
+		await create_game(game);
 		return
 	}
 
 
 	const handleChange = (event) => {
 		const { value, name } = event.target;
-
 		setGame((prevState) => {
 			return { ...prevState, [name]: value }
+		})
+	}
+
+	const handleChangeImage = (event) => {
+		setGame((prevState) => {
+			return { ...prevState, image: event.target.files[0] }
 		})
 	}
 
@@ -75,7 +79,7 @@ const Game = () => {
 
 						<Form.Group className="mb-3" controlId="game-image">
 							<Form.Label>Image</Form.Label>
-							<Form.Control type="file" placeholder="game images..." name="image" onChange={handleChange} value={game.image} />
+							<Form.Control type="file" placeholder="game images..." name="image" onChange={handleChangeImage} />
 						</Form.Group>
 
 						<Button variant="primary" type="submit">Create Game</Button>
@@ -86,4 +90,4 @@ const Game = () => {
 	)
 }
 
-export default Game;
+export default CreateGame;

@@ -7,7 +7,7 @@ const getAll = async () => {
 }
 
 const createGame = async (data) => {
-	console.log("data----", data)
+	//console.log("---in services---", data);
 	return await axios.post(`${URI}/create`, data, {
 		headers: {
 			'Content-Type': 'multipart/form-data'

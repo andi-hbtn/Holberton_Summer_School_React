@@ -4,7 +4,7 @@ const GameContext = createContext({});
 const GameProvider = (props) => {
 	const [games, setGames] = useState([]);
 	useEffect(() => {
-		getAll()
+		get_all_games()
 	}, []);
 
 	const get_all_games = async () => {
@@ -20,6 +20,7 @@ const GameProvider = (props) => {
 	}
 
 	const create_game = async (data) => {
+		//console.log("in  create_game ---", data);
 		try {
 			const result = await createGame(data);
 			if (result.status === 200) {
@@ -30,7 +31,7 @@ const GameProvider = (props) => {
 		}
 	}
 
-	const values = { games, get_all_games, create_game };
+	const values = { games, create_game };
 	return (
 		< GameContext.Provider value={values} >
 			{props.children}
