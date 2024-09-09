@@ -11,11 +11,10 @@ export default function Shop() {
 
 	const [gameLists, setGames] = useState(games);
 	const [fullGameList, setFullGameList] = useState([]);
-
+	
 	useEffect(() => {
 		setFullGameList(games);
 	}, [gameLists]);
-
 	return (
 		<>
 			<Row>
@@ -43,6 +42,7 @@ export default function Shop() {
 									)
 								})
 							}
+
 						</Row>
 					</Container>
 				</Col>

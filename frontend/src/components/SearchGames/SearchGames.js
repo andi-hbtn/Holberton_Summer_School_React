@@ -14,7 +14,7 @@ export default function SearchGames({ fullGameList, setGames }) {
 	return (
 		<Row>
 			<Col xs={12} sm={6}>
-				<Form.Control onChange={handleChange} size="lg" type="text" placeholder="Type..." />
+				<Form.Control size="lg" type="text" placeholder="Type..." onChange={handleChange} />
 			</Col>
 		</Row>
 	)
